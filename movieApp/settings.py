@@ -76,9 +76,16 @@ WSGI_APPLICATION = 'movieApp.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'movieAppDB',
+        'USER': 'userCLK',
+        'PASSWORD': '1234',
+        'HOST': 'localhost',  # Adjust if PostgreSQL is on a different server
+        'PORT': '5432',       # Default PostgreSQL port
+        'OPTIONS': {
+            'client_encoding': 'UTF8',
+        }
     }
 }
 
